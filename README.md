@@ -15,14 +15,14 @@ The goal of this project is to successfully read the output of an off the shelf 
 
 The output for the project was the printed output of the GPS module in a TeraTerm terminal shown below. Most of the results provide information that goes into the quality of the track, the satellites and constellations that were used along with the time the result was received. The lines that show the latitude and longitude are GNGLL and GNRMC. In the example shown, the latitude is shown first with 3534.13381 N with the 35 being the degrees, 34 the minutes and 13.381 being the seconds in the northern hemisphere. The longitude was shown next with the 117 showing the degrees, 32 minutes and 81.038 seconds in the western hemisphere. 
 
-### INSERT IMAGE HERE
+![alt text](https://github.com/cdk008/ECE425_Final_Project_GPS/blob/1b148424050017d958281de4f07be8db8c366247/Pictures/Terminal%20Output.png?raw=true)
 
 When plugging in the coordinates into a mapping software, the exact numbers were not coming up with results. This seemed to be due to the fact that the mapping softwares did not accept the significant figures from the GPS. There also was a discrepancy between the GPS output and a smartphone GPS location. Due to the maps softwares not accepting the exact coordinates, it is hard to determine what error is due to either gps or to the mapping software itself. The image below shows the difference in Bing Maps as this is the one that accepted the coordinates most accurately.
 
 GPS: 35°34'13.4"N 117°32'81.0"W 
 Phone: 35°34'08.2"N 117°32'49.4"W
 
-### INSERT IMAGE HERE
+![alt text](https://github.com/cdk008/ECE425_Final_Project_GPS/blob/1b148424050017d958281de4f07be8db8c366247/Pictures/Maps%20Output.png?raw=true)
 
 The main challenges included finding information for the GPS module and getting the outputs to display properly. I was not able to find a data sheet for the GPS module and ended up having to settle for a product page that had enough information. While this helped verify that the GPS on the device used UART and gave a range of baud rates, it did not give a definitive default to go off of or give instructions for how to set up a specific baud rate or change any of the settings for the GPS. I was able to determine that the default baud rate was 9600 and adjust the microcontroller programming to match. After getting an output, I had to alter the maximum size of the message that could come in as my initial guess of 64 characters was too small and lead to overwriting of the data.
 
@@ -30,13 +30,19 @@ The main challenges included finding information for the GPS module and getting 
 
 [Link](https://youtu.be/dxJiQWxAOfA) to video showing GPS 3D-Lock
 
+Images of in the field tests of the system are shown below.
+
+![alt text](https://github.com/cdk008/ECE425_Final_Project_GPS/blob/1b148424050017d958281de4f07be8db8c366247/Pictures/Field%20Picture%20Setup.jpg?raw=true)
+
+![alt text](https://github.com/cdk008/ECE425_Final_Project_GPS/blob/1b148424050017d958281de4f07be8db8c366247/Pictures/Field%20Picture%20Board.jpg?raw=true)
+
 ## Background and Methodology
 
 The primary embedded system concept that is used in this project, as highlighted in the title of the project, is UART communication protocol. UART or Universal Asynchronous Receiver Transmitter uses two wires between two devices along with agreed upon parameters such as baud rate. In order to set up and make the necessary connections, GPIO and delays were also used. The hardware used in this project includes a Mateksys M8Q-5883 GPS module, the TM4C123GH6PM microcontroller, and a Elegoo 5V power supply. The microcontroller peripherals used included UART, SysTick and GPIO. The data output from the microcontroller was displayed on a laptop using TeraTerm software.
 
 ## Block Diagram
 
-### INSERT IMAGE HERE
+![alt text](https://github.com/cdk008/ECE425_Final_Project_GPS/blob/1b148424050017d958281de4f07be8db8c366247/Pictures/Block%20Diagram.png?raw=true)
 
 ## Components Used
 
